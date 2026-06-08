@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plano de Lotação - Cadastro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header-bar"></header>
+
+  <main class="content-wrapper">
+    <div class="logo-container logo-container-login">
+      <img src="images/bosch-logo.d801fe2509a37d2d.svg" alt="Bosch Logo" class="logo">
+      <img src="images/LogoSENNACONNECT.png" alt="Senna Connect" class="logo-senna">
+    </div>
+
+    <section class="card-operadores">
+      <div class="card-operadores-crin">
+        <h4>Operadores Total</h4>
+        <p id="indicador-total-operadores">0</p>
+      </div>
+      <div class="card-operadores-emprestados">
+        <h4>Operadores do CRIN</h4>
+        <p id="indicador-operadores-crin">0</p>
+      </div>
+      <div class="card-operadores-afastados">
+        <h4>Apoio de outros setores</h4>
+        <p id="indicador-apoio">0</p>
+      </div>
+      <div class="card-operadores-afastados">
+        <h4>Operadores Indisponível</h4>
+        <p id="indicador-indisponivel">0</p>
+      </div>
+      <div class="card-operadores-afastados">
+        <h4>CRIN Sem Alocação</h4>
+        <p id="indicador-sem-alocacao">0</p>
+      </div>
+    </section>
+
+    <section class="form-section cadastro-plano-section">
+      <div class="large-card">
+        <div class="card-header">
+          <h1><span id="codigo-plano-titulo">Novo Plano</span> <span id="plano-user-info" class="user-info"></span></h1>
+        </div>
+
+        <div class="form-container">
+          <form id="form-plano">
+            <input type="hidden" id="plano-id">
+
+            <div class="form-grid">
+              <div class="input-group">
+                <label for="codigo-plano">Código do Plano</label>
+                <input type="text" id="codigo-plano" class="form-input" placeholder="Gerado automaticamente" readonly>
+              </div>
+
+              <div class="input-group">
+                <label for="processo">Processo</label>
+                <select id="processo" class="form-select" required>
+                  <option value="" hidden>Selecione...</option>
+                  <option value="LINHA DE EXAMES L1">LINHA DE EXAMES L1</option>
+                  <option value="LINHA DE EXAMES L3">LINHA DE EXAMES L3</option>
+                  <option value="MONTAGEM DO GM">MONTAGEM DO GM</option>
+                  <option value="MONTAGEM E EXAMES FLEX">MONTAGEM E EXAMES FLEX</option>
+                  <option value="MONTAGEM L1">MONTAGEM L1</option>
+                  <option value="MONTAGEM L3">MONTAGEM L3</option>
+                  <option value="SALA INTERLAGOS">SALA INTERLAGOS</option>
+                  <option value="USINAGEM AK">USINAGEM AK</option>
+                  <option value="USINAGEM DO GM">USINAGEM DO GM</option>
+                  <option value="USINAGEM DO JOGO DE VÁLVULA">USINAGEM DO JOGO DE VÁLVULA</option>
+                  <option value="USINAGEM FINAL">USINAGEM FINAL</option>
+                  <option value="USINAGEM FLEX">USINAGEM FLEX</option>
+                  <option value="USINAGEM GRUPO INDUZIDO CRIN 1">USINAGEM GRUPO INDUZIDO CRIN 1</option>
+                  <option value="USINAGEM GRUPO INDUZIDO CRIN 2/3">USINAGEM GRUPO INDUZIDO CRIN 2/3</option>
+                  <option value="USINAGEM LMN">USINAGEM LMN</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label for="turno-plano">Turno</label>
+                <select id="turno-plano" class="form-select" required>
+                  <option value="" hidden>Selecione...</option>
+                  <option value="1º Turno">1º Turno</option>
+                  <option value="2º Turno">2º Turno</option>
+                  <option value="3º Turno">3º Turno</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label for="input-total-operadores">Quantidade de Operadores</label>
+                <input type="number" id="input-total-operadores" class="form-input apenas-numeros" min="0" inputmode="numeric" data-max-digits="3" required>
+              </div>
+            </div>
+
+            <div id="container-niveis" class="container-niveis"></div>
+            <p id="mensagem-form" class="mensagem-form"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-actions-container">
+    <button id="btn-voltar-menu" class="btn-voltar" type="button">Voltar</button>
+    <button id="btn-salvar-plano" class="btn-salvar" type="submit" form="form-plano">Salvar</button>
+  </footer>
+
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>

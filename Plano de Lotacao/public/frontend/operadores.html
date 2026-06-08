@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Operadores</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header-bar"></header>
+
+  <main class="content-wrapper">
+    <div class="logo-container logo-container-login">
+      <img src="images/bosch-logo.d801fe2509a37d2d.svg" alt="Bosch Logo" class="logo">
+      <img src="images/LogoSENNACONNECT.png" alt="Senna Connect" class="logo-senna">
+    </div>
+
+    <section class="form-section operadores-section">
+      <div class="large-card">
+        <div class="card-header">
+          <h1>Lista de Operadores</h1>
+        </div>
+
+        <div class="form-container">
+          <div class="search-bar-wrapper search-bar-inline search-bar-no-padding">
+            <input type="text" id="busca-operador" class="search-input" placeholder="Buscar por nome, EDV, cargo ou centro de custo" maxlength="120">
+          </div>
+
+          <p id="mensagem-form" class="mensagem-form"></p>
+
+          <div class="table-wrapper">
+            <table class="operadores-table">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Turno</th>
+                  <th>Cargo</th>
+                  <th>EDV</th>
+                  <th>Centro</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="operadores-tbody">
+                <tr>
+                  <td colspan="7">Carregando operadores...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-actions-container">
+    <button id="btn-voltar-operadores" class="btn-voltar" type="button">Voltar</button>
+    <button id="btn-novo-operador" class="btn-salvar" type="button">Novo</button>
+  </footer>
+
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>

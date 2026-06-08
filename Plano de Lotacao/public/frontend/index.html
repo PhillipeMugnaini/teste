@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plano de Lotação</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header-bar"></header>
+
+  <nav>
+    <figure>
+      <img src="images/bosch-logo.d801fe2509a37d2d.svg">
+      <img src="images/LogoSENNACONNECT.png">
+    </figure>
+  </nav>
+
+  <main class="content-wrapper">
+    <section class="hero-section hero-login-section">
+      <h1 class=" main-title">Plano de Lotação</h1>
+
+      <div id="login-card">
+
+        <input
+        type="number" 
+        id="edv-login"
+        class="apenas-numeros"
+        placeholder="Digite seu EDV"
+        min="0"
+        inputmode="numeric"
+        data-max-digits="10"
+        required
+        ><p id="mensagem-login" class="mensagem-form"></p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-action">
+    <button class="btn-proxima-tela" type="button">Próximo</button>
+  </footer>
+
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>

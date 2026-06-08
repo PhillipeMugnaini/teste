@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Colaborador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header-bar"></header>
+
+  <main class="content-wrapper">
+    <div class="logo-container logo-container-login">
+      <img src="images/bosch-logo.d801fe2509a37d2d.svg" alt="Bosch Logo" class="logo">
+      <img src="images/LogoSENNACONNECT.png" alt="Senna Connect" class="logo-senna">
+    </div>
+
+    <section class="form-section cadastro-operador-section">
+      <div class="large-card">
+        <div class="card-header">
+          <h1>Cadastro de Operador</h1>
+        </div>
+
+        <div class="form-container">
+          <form id="form-operador" class="form-grid">
+            <input type="hidden" id="operador-id">
+
+            <div class="input-group full-width">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" class="form-input" placeholder="Nome completo" maxlength="120" required>
+            </div>
+
+            <div class="input-group">
+              <label for="turno">Turno</label>
+              <select id="turno" class="form-select" required>
+                <option value="" hidden>Selecione...</option>
+                <option value="1º Turno">1º Turno</option>
+                <option value="2º Turno">2º Turno</option>
+                <option value="3º Turno">3º Turno</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="cargo">Cargo</label>
+              <select id="cargo" class="form-select" required>
+                <option value="" hidden>Selecione...</option>
+                <option value="Ajustador">Ajustador</option>
+                <option value="Operador">Operador</option>
+                <option value="Operador 1">Operador I</option>
+                <option value="Operador 2">Operador II</option>
+                <option value="Operador 3">Operador III</option>
+                <option value="Apontador de Produção">Apontador de Produção</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="edv">EDV</label>
+              <input type="number" id="edv" class="form-input apenas-numeros" placeholder="Digite o EDV" min="0" inputmode="numeric" data-max-digits="10" required>
+            </div>
+
+            <div class="input-group">
+              <label for="centro_custo">Centro de Custo</label>
+              <select id="centro_custo" class="form-select" required>
+                <option value="" hidden>Selecione...</option>
+                <option value="685604">685604 - Usinagem Flex</option>
+                <option value="685605">685605 - Montagem do GM</option>
+                <option value="605606">605606 - Montagem L1</option>
+                <option value="685607">685607 - Linha de Exames L1</option>
+                <option value="685608">685608 - Usinagem AK</option>
+                <option value="685609">685609 - Usinagem Final</option>
+                <option value="685612">685612 - Sala Interlagos</option>
+                <option value="685613">685613 - Usinagem LMN</option>
+                <option value="685614">685614 - Usinagem GM</option>
+                <option value="685615">685615 - Usinagem do jogo de valvula</option>
+                <option value="685616">685616 - Usinagem grupo induzido CRIN 2/3</option>
+                <option value="685617">685617 - Usinagem grupo induzido CRIN 1</option>
+                <option value="685618">685618 - Montagem L3</option>
+                <option value="685619">685619 - Linha de exames L3</option>
+                <option value="685620">685620 - Montagem e exame Flex</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="edv_gestor">EDV Gestor</label>
+              <input type="number" id="edv_gestor" class="form-input apenas-numeros" placeholder="EDV do responsável" min="0" inputmode="numeric" data-max-digits="10">
+            </div>
+
+            <div class="input-group">
+              <label for="status">Status</label>
+              <select id="status" class="form-select" required>
+                <option value="" hidden>Selecione...</option>
+                <option value="Ativo">Ativo</option>
+                <option value="Afastado">Afastado</option>
+                <option value="Emprestado">Emprestado</option>
+                <option value="Férias">Férias</option>
+                <option value="Inativo">Inativo</option>
+              </select>
+            </div>
+
+            <p id="mensagem-form" class="mensagem-form full-width"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-actions-container">
+    <button id="btn-voltar-operadores" class="btn-voltar" type="button">Voltar</button>
+    <button id="btn-salvar-operador" class="btn-salvar" type="submit" form="form-operador">Salvar</button>
+  </footer>
+
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>

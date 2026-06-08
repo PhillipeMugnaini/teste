@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar Funcionários</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <img src="images/super_blue.png" id="header-bar" alt="Barra superior">
+
+  <div class="logo-container logo-container-login">
+    <img src="images/bosch-logo.svg" class="logo" alt="Bosch Logo">
+    <img src="images/LogoSENNACONNECT.png" alt="Senna Connect" class="logo-senna">
+  </div>
+
+  <section class="hero-section">
+    <h1 class="main-title">Buscar Funcionários</h1>
+  </section>
+
+  <section class="search-section">
+
+    <div class="large-card">
+      <div class="form-container">
+
+        <div class="search-bar-wrapper">
+          <input
+            type="text"
+            id="busca-operador"
+            class="search-input"
+            placeholder="Digite nome, EDV, cargo ou centro de custo"
+          >
+        </div>
+
+        <p id="mensagem-form" class="mensagem-form"></p>
+
+        <div class="table-wrapper">
+          <table class="operadores-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Turno</th>
+                <th>Cargo</th>
+                <th>EDV</th>
+                <th>Centro de Custo</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="operadores-tbody">
+              <tr>
+                <td colspan="7">Digite algo para pesquisar ou aguarde o carregamento...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <div class="footer-actions-container">
+    <button id="btn-voltar-operadores" class="btn-voltar">Voltar</button>
+    <button id="btn-novo-operador" class="btn-salvar">Novo Funcionário</button>
+  </div>
+
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>
