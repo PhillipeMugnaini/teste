@@ -235,13 +235,22 @@ input{
 }
 
 
-
-.btn-proxima-tela:hover,
-.btn-voltar:hover,
-.btn-salvar:hover {
+/* 1. Aplica o hover de cor no BOTÃO */
+.btn-voltar:hover {
   background-color: var(--bosch-blue);
   color: white;
-  content: url(images/set_esq_branca.svg);
+}
+
+/* 2. Aplica a troca de imagem e controla o tamanho na IMG dentro do botão */
+.btn-voltar:hover img {
+  content: url("images/set_esq_branca.svg");
+  
+  /* Defina aqui o tamanho exato que você quer para a seta (ex: 16px, 18px, 20px) */
+  width: 16px;   
+  height: 16px;
+  
+  /* Garante que o SVG não distorça ao reduzir */
+  object-fit: contain; 
 }
 
 .cards-container {
