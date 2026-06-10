@@ -211,10 +211,32 @@ function configurarNavegacao() {
   document.getElementById('btn-voltar-menu')?.addEventListener('click', () => irPara('menu.html'));
   document.getElementById('btn-voltar-operadores')?.addEventListener('click', () => irPara('menu_operadores.html'));
   document.getElementById('btn-novo-operador')?.addEventListener('click', () => irPara('cadastro-operador.html'));
+
+  // Escuta ativa para monitorar a digitação do EDV no Login
+  configurarMudancaCorBotaoLogin();
+}
+
+function configurarMudancaCorBotaoLogin() {
+  const inputLogin = document.getElementById('edv-login');
+  const btnProxima = document.querySelector('.btn-proxima-tela');
+  
+  if (!inputLogin || !btnProxima) return;
+
+  inputLogin.addEventListener('input', () => {
+    const valor = inputLogin.value.trim();
+    
+    // Regra Bosch: Ativa o realce azul a partir de 4 dígitos inseridos
+    if (valor.length >= 4) {
+      btnProxima.classList.add('active');
+    } else {
+      btnProxima.classList.remove('active');
+    }
+  });
 }
 
 function validarLogin() {
   const input = document.getElementById('edv-login');
+  const btnProxima = document.querySelector('.btn-proxima-tela');
   if (!input) return;
 
   limparMensagem('alert-container');
@@ -222,12 +244,12 @@ function validarLogin() {
 
   if (erro) {
     mostrarMensagem(erro, 'erro', 'alert-container');
+    btnProxima?.classList.remove('active'); 
     return;
   }
 
   sessionStorage.setItem('usuarioEDV', input.value.trim());
-  // Pequeno delay no login para o usuário conseguir ver a animação fluida
-  setTimeout(() => irPara('menu.html'), 400);
+  setTimeout(() => irPara('menu2.html'), 400);
 }
 
 function getDadosFormularioOperador() {
@@ -311,7 +333,6 @@ async function salvarOperador(event) {
     });
 
     mostrarMensagem(resultado.mensagem || 'Operador salvo com sucesso.', 'sucesso');
-    // CORREÇÃO: Espera 3.5 segundos para dar tempo do alerta sumir sozinho
     setTimeout(() => irPara('operadores.html'), 3500);
   } catch (error) {
     mostrarMensagem(error.message || 'Erro ao salvar operador.', 'erro');
@@ -665,7 +686,7 @@ function mostrarAlertaNivel(nivel, mensagem) {
   if (jaExiste) return;
 
   const novaMsg = document.createElement('div');
-  novaMsg.textContent = mensaje;
+  novaMsg.textContent = mensagem; // Corrigido de 'mensaje' para 'mensagem'
   novaMsg.style.color = 'Red';
   novaMsg.style.marginBottom = '4px';
   novaMsg.style.fontSize = '0.9rem';
@@ -734,7 +755,6 @@ async function salvarPlano(event) {
     });
 
     mostrarMensagem(resultado.mensagem || 'Plano salvo com sucesso.', 'sucesso');
-    // CORREÇÃO: Mudado de 700ms para 3500ms para dar tempo do alerta sumir sozinho em tela
     setTimeout(() => irPara('buscaEDT.html'), 3500);
   } catch (error) {
     mostrarMensagem(error.message || 'Erro ao salvar plano.', 'erro');

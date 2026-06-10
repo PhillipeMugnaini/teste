@@ -20,26 +20,35 @@
   <main class="content-wrapper">
     <section class="hero-section hero-login-section">
       <h1 class=" main-title">Plano de Lotação</h1>
+      <span>Informe o EDV para acessar o plano de lotação</span>
 
-      <div id="login-card">
+      <div class="login-card" id="login-card">  
+        <h3>Digite seu EDV</h3>
 
-        <input
-        type="number" 
-        id="edv-login"
-        class="apenas-numeros"
-        placeholder="Digite seu EDV"
-        min="0"
-        inputmode="numeric"
-        data-max-digits="10"
-        required
-        ><p id="mensagem-login" class="mensagem-form"></p>
+        <div class="input-icon-container">
+          <div class="input-icon-left">
+            <i class="fa fa-user-o" aria-hidden="true"></i>
+          </div>
+          <input
+            type="number" 
+            id="edv-login"
+            class="input-custom-login"
+            placeholder="Ex.: 1234567890"
+            min="0"
+            inputmode="numeric"
+            data-max-digits="10"
+            required
+          >
+        </div>
 
+        <p class="input-help-text">Insira o número do seu EDV para continuar.</p>
+        <p id="mensagem-login" class="mensagem-form"></p>
       </div>
     </section>
   </main>
 
   <footer class="footer-action">
-    <button class="btn-proxima-tela" type="button">Próximo</button>
+    <button class="btn-proxima-tela" type="button">Próximo <img src="images/setaDireitaAzul.svg" alt=""></button>
   </footer>
 
   <script src="scripts/scripts.js"></script>

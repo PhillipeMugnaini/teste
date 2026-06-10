@@ -64,15 +64,6 @@ section{
   align-items: center;
 }
 
-input{
-  width: 600px;
-  height: 100px;
-  border-radius: 5px;
-  border: 0;
-  text-align: center;
-  font-weight: 70px;
-  font-size: 20px;
-}
 
 .content-wrapper {
   flex: 1;
@@ -127,21 +118,88 @@ input{
   margin-bottom: 10vh;
 }
 
+input{
+  width: 600px;
+  height: 80px;
+  border-radius: 5px;
+  border: 0;
+  text-align: center;
+  font-weight: 70px;
+  font-size: 20px;
+}
+
 .login-card {
   position: absolute;
-  bottom: -120px;
+  bottom: -140px;
   background-color: white;
   width: 80%;
   max-width: 800px;
-  padding: 30px 20px 60px;
-  border-radius: 25px;
-  box-shadow: var(--shadow);
-  text-align: center;
+  height: auto; /* Deixa o card se ajustar ao conteúdo organicamente */
+  padding: 35px 40px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Sombra suave idêntica à imagem */
+  text-align: left;
+}
+
+.input-icon-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  box-shadow: 1px 1px 1px 1px rgba(32,32,32,0.3);
-  
+  width: 100%;
+  height: 60px; /* Altura padrão para inputs elegantes */
+  border: 1px solid #d0d0d0;
+  border-radius: 12px;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-icon-container:focus-within {
+  border-color: var(--bosch-blue);
+  box-shadow: 0 0 0 3px rgba(0, 123, 192, 0.15);
+}
+
+.input-icon-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 100%;
+  border-right: 1px solid #f0f0f0; /* Divisória sutil interna */
+  color: var(--bosch-blue); /* Cor azul Bosch para o ícone */
+  font-size: 1.2rem;
+}
+
+input.input-custom-login {
+  flex: 1;
+  height: 100%;
+  border: none !important;
+  outline: none !important;
+  padding: 0 15px;
+  font-size: 1.1rem;
+  color: var(--bosch-black);
+  text-align: left; /* Alinhado à esquerda como na foto */
+  background: transparent;
+}
+
+/* Estilização do Placeholder (Texto fantasma de exemplo) */
+input.input-custom-login::placeholder {
+  color: #999999;
+}
+
+/* Texto de ajuda cinza logo abaixo do input */
+.input-help-text {
+  font-size: 0.95rem;
+  color: #737980;
+  margin-top: 14px;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333a42;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .login-card h2 {
@@ -230,28 +288,53 @@ input{
   font-size: 1.05rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
   min-width: 150px;
 }
 
+/* Garante que a imagem tenha o mesmo tamanho estático SEMPRE */
+.btn-voltar img {
+  width: 16px;   
+  height: 16px;
+  object-fit: contain;
+}
 
-/* 1. Aplica o hover de cor no BOTÃO */
+/* 2. Aplica o hover de cor no BOTÃO */
 .btn-voltar:hover {
   background-color: var(--bosch-blue);
   color: white;
 }
 
-/* 2. Aplica a troca de imagem e controla o tamanho na IMG dentro do botão */
+/* 3. Troca apenas a origem da imagem no hover, sem alterar o tamanho dela */
 .btn-voltar:hover img {
   content: url("images/set_esq_branca.svg");
-  
-  /* Defina aqui o tamanho exato que você quer para a seta (ex: 16px, 18px, 20px) */
+}
+
+.btn-voltar img,
+.btn-proxima-tela img {
   width: 16px;   
   height: 16px;
-  
-  /* Garante que o SVG não distorça ao reduzir */
-  object-fit: contain; 
+  object-fit: contain;
 }
+
+.btn-proxima-tela:hover {
+  background-color: var(--bosch-blue);
+  color: white;
+}
+
+.btn-proxima-tela.active {
+  background-color: var(--bosch-blue);
+  color: white;
+}
+
+.btn-proxima-tela.active img {
+  content: url("images/setaDireitaBranca.svg");
+}
+
+.btn-proxima-tela:hover img {
+  content: url("images/setaDireitaBranca.svg");
+}
+
 
 .cards-container {
   display: flex;
@@ -608,6 +691,10 @@ input{
 
 .readonly-output {
   background: #f8f9fa;
+}
+
+span{
+  font-size: 1.6rem;
 }
 
 @media (max-width: 1200px) {
